@@ -9,7 +9,7 @@ const app = Vue.createApp({
             vueLink: 'https://vuejs.org/guide/introduction.html#pick-your-learning-path',
         };
     },
-    // methods allow to define functions. data itself was a function, but data takes an objects, thats full of methods
+    // methods allow to define functions. data itself was a function, but methods takes an object, thats full of methods
     methods: {
         // classic function definition instead of shorthand from above
         outputGoal: function () {
