@@ -10,7 +10,7 @@ Vue.createApp({
         };
     },
     methods: {
-        // in the value-objectb we can define funcritons, available in htmSl
+        // in the value-objectb we can define funcritons, available in html
         addGoal() {
             this.goals.push(this.enteredValue);
             this.enteredValue = '';
