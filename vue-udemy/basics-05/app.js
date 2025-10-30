@@ -31,8 +31,10 @@ const app = Vue.createApp({
     },
     // Technically these are methods, but it's used like data properties
     computed: {
+
+        // good use of computed-property
         fullName() {
-            console.log("wtf fullname property");
+            console.log("Property: fullName");
             if (this.name === '' || this.lastName === '') return '';
             return this.name + ' ' + this.lastName;
         },
@@ -50,12 +52,12 @@ const app = Vue.createApp({
 
         // bad use of watcher: (see computed property version)
         name(value) {  // value is always the last value of the watched object!!
-            console.log("wtf name watcher");
+            console.log("Watcher: name");
             if (value === '') return '';
             this.fullNameData = value + ' ' + this.lastName;
         },
         lastName(value) {  // value is always the last value of the watched object!!
-            console.log("wtf fullname watcher");
+            console.log("Watcher: lastName");
             if (value === '') return '';
             this.fullNameData = this.name + ' ' + value;
         },

@@ -28,11 +28,10 @@ h2 {
 p {
   font-size: 1.25rem;
   font-weight: bold;
-  background-color: #970076;
+  background-color: #7054eb;
   padding: 0.5rem;
   color: white;
   border-radius: 25px;
-}
 
 input {
   font: inherit;

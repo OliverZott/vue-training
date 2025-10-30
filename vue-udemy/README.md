@@ -11,6 +11,7 @@
 
 ## Basics 3 - events
 
+- `v-once` ...show initial property valueand  never change
 - events:
   - `event.target.value`
   - `v-on:input="setName($event, 'Doe')`
@@ -23,6 +24,9 @@
 ## Basics 5 - native event object / computed properties
 
 - Two-way binding: `v-model="name"` is shortcut for `v-bind:value="name" v-on:input="setName"`
+
+ Vue always runs all methods, if anything in scope changes... so better to use Computed Properties
+
 - **Computed Properties**
   - used if: calculate output value dynamically
   - dont use methods for output (see consoloe output) because methods in outputs are always called, if ANYTHING changes

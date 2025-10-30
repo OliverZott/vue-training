@@ -19,6 +19,7 @@
         <h2>Events in Action</h2>
         <button v-on:click="increment(2)">Increment</button>
         <button v-on:click="decrement(3)">Decrement</button>
+        <p v-once>Starting counter: {{ counter }}</p>
         <p>Result: {{ counter }}</p>
         <input type="text" v-on:input="setName($event, 'Zott')" v-on:keyup.enter="confirmInput">
         <p>Name: {{name }}</p>
