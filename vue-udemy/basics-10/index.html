@@ -3,12 +3,24 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
     <title>Vue Basics</title>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@next" defer></script>
-    <script src="app.js" defer></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script
+        src="app.js"
+        defer
+    ></script>
 </head>
 
 <body>
@@ -16,9 +28,26 @@
         <h1>Vue Dynamic Styling</h1>
     </header>
     <section id="styling">
-        <div class="demo"></div>
-        <div class="demo"></div>
-        <div class="demo"></div>
+
+        <!-- inline, not recommanded -->
+        <div
+            class="demo"
+            :style="{ borderColor: boxASelected ? 'red' : 'blue'}"
+            @click="boxSelected('A')"
+        ></div>
+
+        <!-- better, but hard to read -->
+        <div
+            v-bind:class="boxBSelected ? 'demo active' : 'demo'"
+            @click="boxSelected('B')"
+        ></div>
+
+        <!-- best practice -->
+        <div
+            class="demo"
+            :class="{active: boxCSelected}"
+            @click="boxSelected('C')"
+        ></div>
     </section>
 </body>
 

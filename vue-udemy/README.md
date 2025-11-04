@@ -36,3 +36,14 @@
   - used if: want to execute code, if something changes!
   - e.g. good for http requests if data changes
 - [Summary watchers-methods-computedProperties](https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463202#overview)
+
+## Basics 10 - Dynamic styling
+
+- `v-bin:style="{ borderColor: boxASelected ? 'red' : 'blue'}"` or `:style=`
+- inline styles override css styles, so dont use too much inline styles. Instead use css classes with `v-bind:class` or `:class=`
+- best practice - use css classes and toggle them with vue:
+
+  ```html
+    class="demo"
+    :class="{active: boxCSelected}"
+  ```

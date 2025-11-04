@@ -23,13 +23,15 @@ const app = Vue.createApp({
     watch: {                    // watch(temp, (v) => {...})
         result(value) {
 
-            // setTimeout(() => this.temp = 0, 5000);  // function declaration uses global scope, not my vue scope
+            // use arrow to preserve `this`
+            // setTimeout(() => this.temp = 0, 5000); 
 
+            // function declaration uses global scope, not my vue scope
             const that = this;
             setTimeout(function () {
                 console.log("inside setTimeout")
                 that.temp = 20;
-            }, 5000)
+            }, 2000)
         }
     }
 });
