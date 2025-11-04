@@ -15,9 +15,12 @@
         "editor.formatOnSave": true
     },
     "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+        "editor.defaultFormatter": "vscode.html-language-features",
+        "editor.formatOnSave": true
     },
     "[markdown]": {
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-    }
+    },
+    "html.format.wrapAttributes": "force-expand-multiline",
+    "html.format.wrapLineLength": 0,
 }
