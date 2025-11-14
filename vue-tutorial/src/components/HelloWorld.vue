@@ -5,11 +5,10 @@ defineProps<{ msg: string }>();
 
 const count = ref(0);
 const myMsg = ref('My Text :)');
+const booleanInput =ref('');
 
 // Attribute binding via v-bind:class or shorthand :class
 const titleClass = ref('title');
-
-const isTrue = ref(0);
 
 // Event listener for the button click
 function incrementCount(val: number) {
@@ -22,27 +21,38 @@ function showInputText(e: Event) {
     inputText.value = e.target.value;
 }
 
+function isTrue() {
+    try {
+        const parsed = JSON.parse(booleanInput.value)
+        return parsed;
+    } catch {
+        return !!booleanInput.value;  // if parsing fails, string is truthy/falsy
+    }
+}
 
 </script>
 
 <template>
     <h1>{{ msg }}</h1>
-    <h2 :class="titleClass"> {{ myMsg }} </h2>
+    <h2 :class="titleClass">{{ myMsg }}</h2>
 
-    <!--    Event handler-->
+    <!-- Event handler -->
     <div class="card">
         <button type="button" @click="incrementCount(3)">count is {{ count }}</button>
     </div>
 
     <!-- two-way binding -->
     <input type="text" v-model="myMsg" />
+
+    <!-- one-way binding + eventhandler for updating -->
     <input type="text" :value="inputText" @input="showInputText" placeholder="Type here" />
     <p>{{ inputText }}</p>
 
-    <!--    Conditional rendering-->
-    <p v-if="isTrue">True</p>
-    <p v-else>False</p>
+    <!-- Conditional rendering -->
 
+    <input type="text" v-model="booleanInput"></input>
+    <p v-if="isTrue()">True</p>
+    <p v-else>False</p>
 </template>
 
 <style scoped>
