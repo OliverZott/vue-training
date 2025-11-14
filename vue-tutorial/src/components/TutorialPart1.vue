@@ -33,7 +33,11 @@ function isTrue() {
 </script>
 
 <template>
+
+    <!-- component props -->
     <h1>{{ msg }}</h1>
+
+    <!-- attribute binding -->
     <h2 :class="titleClass">{{ myMsg }}</h2>
 
     <!-- Event handler -->
@@ -48,11 +52,11 @@ function isTrue() {
     <input type="text" :value="inputText" @input="showInputText" placeholder="Type here" />
     <p>{{ inputText }}</p>
 
-    <!-- Conditional rendering -->
 
+    <!-- Conditional rendering -->
     <input type="text" v-model="booleanInput"></input>
-    <p v-if="isTrue()">True</p>
-    <p v-else>False</p>
+    <p v-if="isTrue()">yeay, true 😊</p>
+    <p v-else>Oh no, false 😢</p>
 </template>
 
 <style scoped>
